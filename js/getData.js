@@ -39,6 +39,7 @@ const getDataJson = () =>{
 			})
 	}
 	
+
 	links.forEach((link) =>{
 		link.addEventListener('click', (event) =>{
 			event.preventDefault()
@@ -48,6 +49,10 @@ const getDataJson = () =>{
 		})
 	})
 
+	if (window.location.pathname !== '/goods.html')
+		linkAll.onclick = () =>{getData()}
+	
+		
 	if(localStorage.getItem('goods') && window.location.pathname === '/goods.html') 
 		renderGoods(JSON.parse(localStorage.getItem('goods')))
 }
